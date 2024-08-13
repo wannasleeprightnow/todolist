@@ -15,6 +15,8 @@ def create_app() -> FastAPI:
     app = FastAPI(
         debug=True,
         title="project217",
+        docs_url="/api/docs",
+        openapi_url="/api/openapi.json",
     )
 
     init_routers(app)
