@@ -1,0 +1,22 @@
+services:
+  backend_app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: backend_app
+    command: ["./docker_compose/backend_app.sh"]
+    env_file:
+      - ../../.env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ..:/code
+    networks:
+      - backend
+
+volumes:
+  ..:
+
+networks:
+  backend:
+    driver: bridge
