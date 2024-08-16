@@ -5,9 +5,18 @@ NGINX_FILE = backend/docker_compose/nginx.yaml
 
 all:
 
-start_all: start_postgres start_backend_app start_nginx
+start_all:
+	$(DC) up --build -d
 
-drop_all: drop_postgres drop_backend_app drop_nginx
+drop_all:
+	$(DC) down
+
+logs_all:
+	$(DC) logs -f
+
+# start_all: start_postgres start_backend_app start_nginx
+
+# drop_all: drop_postgres drop_backend_app drop_nginx
 
 start_backend_app:
 	$(DC) -f $(BACKEND_APP_FILE) up --build -d
@@ -27,8 +36,8 @@ start_nginx:
 drop_nginx:
 	$(DC) -f $(NGINX_FILE) down
 
-logs_all: 
-	$(DC) -f $(BACKEND_APP_FILE) -f $(POSTGRES_FILE) -f $(NGINX_FILE) logs -f
+# logs_all: 
+# 	$(DC) -f $(BACKEND_APP_FILE) -f $(POSTGRES_FILE) -f $(NGINX_FILE) logs -f
 
 logs_backend_app:
 	$(DC) -f $(BACKEND_APP_FILE) logs -f

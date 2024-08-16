@@ -9,4 +9,4 @@ api_v1_root_router = APIRouter(
 
 @api_v1_root_router.get("/")
 async def get_index() -> dict[str, str]:
-    return {"message": "Hello World"}
+    return {"message": "Hello World!"}
