@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from"./SignInForm.module.css";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
 
 export default function SignInForm ( setActiveTab ) {
 
@@ -31,21 +33,21 @@ export default function SignInForm ( setActiveTab ) {
 
 	return (
     <>
-		<form>
-          <input
+		<form className={classes.sign_in_form}>
+          <Input
             type="text"
             value={signInForm.username}
             placeholder="Username"
             onChange={handleUsernameChange}
           />
-          <input
+          <Input
             type="password"
             value={signInForm.password}
             placeholder="Password"
             onChange={handlePasswordChange}
           />
           <a href="/sign-up" className={classes.sign_up_redirect}>Have not account?</a>
-          <button type="submit" disabled={!isValid} onClick={() => console.log(signInForm)}>Sign In</button>
+          <Button type="submit" disabled={!isValid} onClick={() => console.log(signInForm)}>Sign In</Button>
   </form>
   </>
 	)

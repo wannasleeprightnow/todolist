@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
+import classes from "./SignUpForm.module.css";
 
 export default function SignUpForm () {
 
@@ -27,29 +30,29 @@ export default function SignUpForm () {
 	  };
 
 	return (
-		<form>
-          <input
+		<form className={classes.sign_up_form}>
+          <Input
             type="email"
             value={signUpForm.email}
             placeholder="Email"
             onChange={handleEmailChange}
             required
           />
-          <input
+          <Input
             type="text"
             value={signUpForm.username}
             placeholder="Username"
             onChange={handleUsernameChange}
             required
           />
-          <input
+          <Input
             type="password"
             value={signUpForm.password}
             placeholder="Password"
             onChange={handlePasswordChange}
             required
           />
-          <button disabled={!isValid} type="submit">Sign Up</button>
+          <Button type="submit" disabled={!isValid}>Sign Up</Button>
   </form>
 	)
 }

@@ -1,0 +1,21 @@
+.button {
+    backdrop-filter: blur(10px);
+	border-radius: 6px;
+    background-color: transparent;
+	border-radius: 6px;
+    border: 1px solid black;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 14px;
+	color: black;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+    margin-top: auto;
+}
+
+.button.disabled {
+	cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.6);
+}

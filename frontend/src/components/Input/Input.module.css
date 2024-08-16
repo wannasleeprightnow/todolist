@@ -1,0 +1,20 @@
+input {
+	background-color: transparent;
+	font-family: "Poppins", sans-serif;
+	font-weight: 200;
+	font-style: normal;
+	font-size: 14px;
+	border-radius: 6px;
+	border: 1px solid black;
+	margin-top: 10%;
+	padding: 0.5rem;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+input:focus {
+  opacity: 0.6;
+  outline: none;
+}
