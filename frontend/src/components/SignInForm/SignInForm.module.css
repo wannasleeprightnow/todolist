@@ -1,25 +1,24 @@
 .sign_up_redirect {
+  margin-top: 0;
   text-decoration: none;
+  border-color: transparent;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-style: normal;
   font-size: 14px;
-  margin-top: 0;
   color: rgba(0, 0, 0, 0.6);
-  border-color: transparent;
   user-select: none;
 }
 
 .sign_in_form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  width: 300px;
+  height: 250px;
   margin: 20px auto;
   border: 1px solid black;
   padding: 20px;
   border-radius: 6px;
-  backdrop-filter: blur(10px);
-  width: 300px;
-  height: 250px;
 }

@@ -1,8 +1,13 @@
 import classes from "./Input.module.css";
 
+export default function Input({ ...props }) {
+  const handleKeyDown = (event: any) => {
+    if (event.key === "Enter") {
+      event.target.blur();
+    }
+  };
 
-export default function Input ({ ...props}) {
-	return (
-		<input className={classes.input} {...props} />
-	)
+  return (
+    <input onKeyDown={handleKeyDown} className={classes.input} {...props} />
+  );
 }

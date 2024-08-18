@@ -1,13 +1,13 @@
 .sign_up_form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 20px auto;
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 6px;
-    backdrop-filter: blur(10px);
-    width: 300px;
-    height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 250px;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 6px;
+  /* backdrop-filter: blur(10px); */
 }
