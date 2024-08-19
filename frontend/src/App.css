@@ -1,5 +1,11 @@
-body,
-html {
+@font-face {
+	font-family: 'Poppins';
+	src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+
+body, html {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,13 +13,11 @@ html {
   height: 100%;
   margin: 0;
   background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('./assets/-10-04-2024_18_13_31.webp');
-  backdrop-filter: ;
-  /* background-image: url("./assets/-10-04-2024_18_13_31.png"); */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   font-family: "Poppins", sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   font-style: normal;
   font-size: 14px;
 }
