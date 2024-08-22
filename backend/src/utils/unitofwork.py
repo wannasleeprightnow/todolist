@@ -1,7 +1,10 @@
 from abc import ABC, abstractmethod
-from typing import Any, Callable
+from typing import Any, Callable, Type
 
 from sqlalchemy.ext.asyncio import AsyncSession
+
+from database.database import async_session_maker
+from repositories.users import UsersRepository
 
 
 class AbstractUnitOfWork(ABC):
@@ -28,12 +31,15 @@ class AbstractUnitOfWork(ABC):
 
 
 class UnitOfWork(AbstractUnitOfWork):
+    users: Type[UsersRepository]
 
-    def __init__(self, session_factory: Callable[[], AsyncSession]) -> None:
-        self._session_factory = session_factory
+    def __init__(self) -> None:
+        self._session_factory = async_session_maker
 
     async def __aenter__(self) -> None:
         self._session = self._session_factory()
+
+        self.users = UsersRepository(self._session)
 
     async def __aexit__(self, *args: tuple[Any]) -> None:
         await self.rollback()

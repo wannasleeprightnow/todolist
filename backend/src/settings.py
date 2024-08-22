@@ -3,7 +3,6 @@ from typing import Literal
 from pydantic_settings import BaseSettings
 
 
-
 class Settings(BaseSettings):
 
     API_V1_PREFIX: str = "/api/v1"

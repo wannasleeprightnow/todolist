@@ -6,6 +6,8 @@ from sqlalchemy import pool
 from alembic import context
 
 from database.database import Base
+from models.tasks import Tasks
+from models.users import Users
 from settings import settings
 
 # this is the Alembic Config object, which provides
@@ -16,7 +18,9 @@ config = context.config
 # This line sets up loggers basically.
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
-    
+
+
+
 config.set_main_option(
     "sqlalchemy.url", settings.postgres_dsn + "?async_fallback=True"
 )

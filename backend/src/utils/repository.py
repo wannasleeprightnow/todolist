@@ -28,7 +28,8 @@ class SQLAlchemyRepository(AbstractRepository[ModelT]):
     def __init__(self, session: AsyncSession):
         self.session = session
 
-    async def insert_one(self, **data: dict) -> ModelT:
+    async def insert_one(self, data: dict) -> ModelT:
+
         stmt = insert(self.model).values(**data).returning(self.model)
         result = await self.session.execute(stmt)
         return result.scalar_one()
