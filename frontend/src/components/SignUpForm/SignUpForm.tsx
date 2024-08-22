@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import classes from "./SignUpForm.module.css";
 
-export default function SignUpForm({ setSignedUp }) {
+export default function SignUpForm() {
+  const navigate = useNavigate();
   const [signUpForm, setSignUpForm] = useState({
     email: "",
     username: "",
@@ -13,57 +14,66 @@ export default function SignUpForm({ setSignedUp }) {
 
   const [isValid, setIsValid] = useState(false);
 
+  const [isLoading, setLoading] = useState(false);
+
   useEffect(() => {
     setIsValid(
       signUpForm.email !== "" &&
-        signUpForm.username !== "" &&
-        signUpForm.password !== ""
-        ? true
-        : false
+      signUpForm.username !== "" &&
+      signUpForm.password !== ""
     );
   }, [signUpForm]);
 
-  const handleEmailChange = (event: any) => {
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSignUpForm((prev) => ({ ...prev, email: event.target.value }));
   };
 
-  const handleUsernameChange = (event: any) => {
+  const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSignUpForm((prev) => ({ ...prev, username: event.target.value }));
   };
 
-  const handlePasswordChange = (event: any) => {
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSignUpForm((prev) => ({ ...prev, password: event.target.value }));
   };
 
-  const sendSignUpUserForm = async () => {
+  const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+  const fetchWithDelay = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/v1/auth/sign_up", {
-        method: "POST",
+      // Задержка перед отправкой запроса
+      await delay(1000); // Задержка на 5 секунд
+
+      const response = await fetch('http://localhost/api/v1/auth/sign_up', {
+        method: 'POST',
         headers: {
-          "accept": "application/json",
-          "Content-Type": "application/json",
+          'accept': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          email: signUpForm.email,
-          username: signUpForm.username,
-          password: signUpForm.password,
-        }),
+        body: JSON.stringify(signUpForm)
       });
 
-      if (response.ok) {
-        <Navigate to="/sign-in" />
-        setSignedUp(true);
-        console.log(response.ok)
-      } else {
-        throw new Error(`Error status code: ${response.status}`)
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
       }
+
+      const data = await response.json();
+      console.log('Success:', data);
+      navigate("/sign-in"); // Перенаправление после успешной регистрации
     } catch (error) {
-      console.log(error.message);
+      console.error('Error:', error);
+    }
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // Предотвращаем перезагрузку страницы при отправке формы
+    if (isValid) {
+      setLoading(true);
+      fetchWithDelay();
     }
   };
 
   return (
-    <form className={classes.sign_up_form}>
+    <form className={classes.sign_up_form} onSubmit={handleSubmit}>
       <Input
         type="email"
         value={signUpForm.email}
@@ -85,7 +95,7 @@ export default function SignUpForm({ setSignedUp }) {
         onChange={handlePasswordChange}
         required
       />
-      <Button type="submit" disabled={!isValid} onClick={() => sendSignUpUserForm()}>
+      <Button type="submit" disabled={!isValid || isLoading}>
         Sign Up
       </Button>
     </form>

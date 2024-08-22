@@ -1,3 +1,5 @@
+import time
+
 from fastapi import APIRouter, Body, Depends, Request, Response
 
 from api.v1.depends import UOWDepend
@@ -11,12 +13,17 @@ router = APIRouter(
 )
 
 
-@router.post("/sign_up", status_code=201)
+@router.post("/sign_up", status_code=201, response_model=UsersBaseDTO)
 async def sign_up(
-    request: Request,
     uow: UOWDepend,
     user_data: UsersRegisterDTO,
 ):
     user = await UsersService().sign_up(user_data, uow)
-    print(1)
-    return request.client.host
+    return user
+
+
+@router.post("/gh")
+async def hello(
+):
+    time.sleep(3)
+    return "success"

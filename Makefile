@@ -5,6 +5,8 @@ NGINX_FILE = backend/docker_compose/nginx.yaml
 
 all:
 
+restart_all: drop_all start_all
+
 start_all:
 	$(DC) up --build -d
 
