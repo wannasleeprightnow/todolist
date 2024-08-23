@@ -1,6 +1,8 @@
+import React from "react";
+
 import classes from "./ListHeader.module.css";
 
-export default function ListHeader() {
+const ListHeader: React.FC = () => {
     return (
         <li className={classes.list_header}>
             <p className={classes.header_number}>#</p>
@@ -8,4 +10,6 @@ export default function ListHeader() {
             <p className={classes.header_status}>Status</p>
         </li>
     );
-}
+};
+
+export default ListHeader;

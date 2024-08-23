@@ -28,8 +28,25 @@
     height: 21px;
     font-weight: 400;
     text-align: center;
-    border-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    background-color: transparent;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 14px;
 }
+
+.task_title::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.task_title:focus {
+    opacity: 0.6;
+    outline: none;
+}
+
 
 .status {
     height: 37px;

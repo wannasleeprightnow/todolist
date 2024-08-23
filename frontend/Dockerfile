@@ -1,19 +1,19 @@
-# Используем официальный Node.js образ как базовый
-FROM node:18-slim
+FROM node:18-slim as build
 
-# Устанавливаем рабочую директорию
-WORKDIR /app
-
-# Копируем файл package.json и package-lock.json (если есть)
 COPY package*.json ./
 
-# Устанавливаем зависимости
 RUN npm install
 
-# Копируем остальные файлы
 COPY . .
+
+RUN npm run build
+
+FROM nginx:latest
+
+COPY --from=build /dist /usr/share/nginx/html
+COPY --from=build nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 5173
 
 # Запускаем Vite
-CMD ["npm", "run", "dev", "--host", "0.0.0.0"]
+CMD ["nginx", "-g", "daemon off;"]

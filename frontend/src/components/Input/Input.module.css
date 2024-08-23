@@ -1,4 +1,4 @@
-input {
+.input {
     margin-top: 10%;
     padding: 0.5rem;
     border-radius: 6px;
@@ -10,11 +10,11 @@ input {
     font-size: 14px;
 }
 
-input::placeholder {
+.input::placeholder {
     color: rgba(0, 0, 0, 0.6);
 }
 
-input:focus {
+.input:focus {
     opacity: 0.6;
     outline: none;
 }

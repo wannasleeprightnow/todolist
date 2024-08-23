@@ -1,6 +1,13 @@
+import React from "react";
+
 import classes from "./Button.module.css";
 
-export default function Button({ children, isActive, ...props }) {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    children: React.ReactNode;
+    isActive?: boolean;
+}
+
+const Button: React.FC<ButtonProps> = ({ children, isActive, ...props }) => {
     return (
         <button
             className={
@@ -11,4 +18,6 @@ export default function Button({ children, isActive, ...props }) {
             {children}
         </button>
     );
-}
+};
+
+export default Button;

@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
 import ListHeader from "../../components/ListHeader/ListHeader.tsx";
 import ListItem from "../../components/ListItem/ListItem.tsx";
 import Header from "../../components/Header/Header.tsx";
 import Button from "../../components/Button/Button.tsx";
 import Pagination from "../../components/Pagination/Pagination.tsx";
+import Status from "../../Status.ts";
 import classes from "./Main.module.css";
 
 export default function Main() {
@@ -14,109 +14,29 @@ export default function Main() {
             <ul className={classes.ul}>
                 <ListHeader />
                 <ListItem
-                    number="1"
+                    taskNumber={1}
                     taskTitle="test"
-                    taskStatus="In progress"
+                    taskStatus={Status.InProgress}
                 />
                 <ListItem
-                    number="1"
+                    taskNumber={1}
                     taskTitle="test"
-                    taskStatus="In progress"
+                    taskStatus={Status.InProgress}
                 />
                 <ListItem
-                    number="1"
+                    taskNumber={1}
                     taskTitle="test"
-                    taskStatus="In progress"
+                    taskStatus={Status.InProgress}
                 />
                 <ListItem
-                    number="1"
+                    taskNumber={1}
                     taskTitle="test"
-                    taskStatus="In progress"
+                    taskStatus={Status.InProgress}
                 />
                 <ListItem
-                    number="1"
+                    taskNumber={1}
                     taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
-                />
-                <ListItem
-                    number="1"
-                    taskTitle="test"
-                    taskStatus="In progress"
+                    taskStatus={Status.InProgress}
                 />
             </ul>
             <Pagination />
