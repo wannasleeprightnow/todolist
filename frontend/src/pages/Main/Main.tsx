@@ -7,36 +7,119 @@ import Pagination from "../../components/Pagination/Pagination.tsx";
 import classes from "./Main.module.css";
 
 export default function Main() {
-  return (
-    <div className={classes.main}>
-      <Header></Header>
-      <Button className={classes.add}>Add</Button>
-      <ul className={classes.ul}>
-        <ListHeader />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        <ListItem number="1" taskTitle="test" taskStatus="In progress" />
-        
-      </ul>
-      <Pagination />
-    </div>
-  );
+    return (
+        <div className={classes.main}>
+            <Header></Header>
+            <Button className={classes.add}>Add</Button>
+            <ul className={classes.ul}>
+                <ListHeader />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+                <ListItem
+                    number="1"
+                    taskTitle="test"
+                    taskStatus="In progress"
+                />
+            </ul>
+            <Pagination />
+        </div>
+    );
 }

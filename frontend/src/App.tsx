@@ -5,15 +5,15 @@ import SignUp from "./pages/SignUp.tsx";
 import Main from "./pages/Main/Main.tsx";
 
 export default function App() {
-  return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/" element={<Main />} />
-        </Routes>
-      </Router>
-    </>
-  );
+    return (
+        <>
+            <Router>
+                <Routes>
+                    <Route path="/sign-in" element={<SignIn />} />
+                    <Route path="/sign-up" element={<SignUp />} />
+                    <Route path="/" element={<Main />} />
+                </Routes>
+            </Router>
+        </>
+    );
 }

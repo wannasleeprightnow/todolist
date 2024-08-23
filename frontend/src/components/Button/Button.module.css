@@ -1,24 +1,24 @@
 .button {
-  padding: 0.5rem 1rem;
-  margin-top: auto;
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 6px;
-  background-color: transparent;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 14px;
-  color: black;
-  cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin-top: auto;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: transparent;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
 }
 
 .button.disabled {
-  cursor: not-allowed;
-  color: rgba(163, 11, 11, 0.6);
+    cursor: not-allowed;
+    color: rgba(163, 11, 11, 0.6);
 }
 
 .button_active {
-  background-color: red;
-  color: red;
+    background-color: red;
+    color: red;
 }
